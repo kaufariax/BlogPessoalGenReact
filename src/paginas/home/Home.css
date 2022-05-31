@@ -1,11 +1,18 @@
-.titulo{
-    color:crimson;
-    text-align: center;
+.caixa{
+    background-color: #B7E5DD !important;
 }
 
-.img{
-    width: 500px;
-    height: 500px;
-    display: block;
-    margin: 0 auto;
+.titulo{
+    color: #fff !important;
+    font-weight: bold !important;
+ }
+
+ .botao{
+    border-color: #fff !important;
+    background-color: #354259 !important;
+    color: #fff !important;
+}
+
+.postagens{
+    background-color: #fff !important;
 }
