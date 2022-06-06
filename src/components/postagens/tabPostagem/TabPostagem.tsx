@@ -30,7 +30,12 @@ function TabPostagem() {
                 </TabPanel>
                 <TabPanel value="2">
                     <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
-                    <Typography variant="body1" gutterBottom color="textPrimary" align="justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut eveniet natus totam et, voluptate dicta tempore alias, odio nobis non eius cupiditate minima inventore pariatur! Ipsum itaque consectetur voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo velit consequuntur suscipit fugiat, nam quis quod quaerat veritatis et, vel ratione beatae, facere neque! Quo animi porro voluptate saepe deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore adipisci, officia aut quidem dolorum deserunt iure dolorem doloribus velit nobis quas consequatur at ullam odit, nesciunt est nulla nihil excepturi!</Typography>
+                    <Typography variant="body1" gutterBottom color="textPrimary" align="justify">
+                        Recentemente eu concluí o ensino médio e atualmente estudo na Generation Brasil, onde estou me formando como Desenvolvedora .Net
+                        Sou proficiente em persistência e orientação aos detalhes, entusiasta da tecnologia, apaixonada por programação e ansiosa por desvendar os desafios que ela me proporciona.
+                        Também desenvolvi ao longo desses meses projetos utilizando principalmente C#, Asp.Net ,Banco de Dados, Swagger e React, trabalhando com uma equipe incrivel que me ajudou a crescer bastante.
+                        Por fim, tenho como meta me aprofundar mais na área e ingressar futuramente no ensino superior.
+                    </Typography>
                 </TabPanel>
             </TabContext>
         </>
