@@ -11,6 +11,7 @@ function Login() {
 
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
+    const [idCriador, setIdCriador] = useLocalStorage('id');
 
     const [usuario, setUsuario] = useState<Usuario>(
         {
@@ -23,7 +24,7 @@ function Login() {
         }
     );
 
-    function updatedModel(e: ChangeEvent<HTMLInputElement>){
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
         setUsuario({
             ...usuario,
@@ -31,13 +32,13 @@ function Login() {
         })
     }
 
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         
         try {
-            await login(`/api/Usuarios/logar`, usuario, setToken);
+            await login(`/api/Usuarios/logar`, usuario, setToken, setIdCriador);
 
-            alert('Usuário logado com sucesso!');    
+            alert('Usuário logado com sucesso!');
         } catch (error) {
             alert('Dados do usuário inconsistentes. Erro ao logar!');
         }
@@ -45,27 +46,28 @@ function Login() {
 
     useEffect(() => {
 
-        if(token !== ''){
+        if(token !== '') {
             navigate('/home');
         }
 
     }, [token, navigate]);
 
     return (
+        <>
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid alignItems='center' xs={6}>
                 <Box paddingX={20}>
                     <form onSubmit={onSubmit}>
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos1'>Entrar</Typography>
-                        
+
                         <TextField
                             value={usuario.email}
-                            onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth/>
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='email' label='email' variant='outlined' name='email' margin='normal' fullWidth />
 
                         <TextField
                             value={usuario.senha}
-                            onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
 
                         <Box marginTop={2} textAlign='center'>
@@ -81,7 +83,6 @@ function Login() {
                         <Link to='/cadastrousuario'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
-                            
                     </Box>
                 </Box>
             </Grid>
@@ -89,6 +90,7 @@ function Login() {
 
             </Grid>
         </Grid>
+    </>
     );
 }
 
