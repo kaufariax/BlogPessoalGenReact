@@ -105,7 +105,7 @@ function CadastroPostagem() {
     }
 
     function back() {
-        navigate('/posts')
+        navigate('/postagens')
     }
 
     return (
