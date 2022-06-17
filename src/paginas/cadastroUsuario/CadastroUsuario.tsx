@@ -5,6 +5,7 @@ import Usuario from "../../modelos/Usuario";
 import { Grid, Typography, Button, TextField, FormControl, InputLabel, Select } from '@material-ui/core';
 import { Box } from "@mui/material";
 import './CadastroUsuario.css';
+import { toast } from "react-toastify";
 
 function CadastroUsuario(){
     
@@ -61,13 +62,40 @@ function CadastroUsuario(){
         if(confirmarSenha === usuario.senha){
             try {
                 await cadastroUsuario(`/api/Usuarios/cadastrar`, usuario, setUsuarioResultado)
-                alert('Usuario cadastrado com sucesso')
+                toast.success('Usuário cadastrado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined
+                });
             } catch (error) {
-                alert('Usuario já cadastrado, tente outro email!')
+                toast.error('Usuário já cadastrado, tente outro email!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined
+                });
             }
 
         }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+                toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined
+                });
         }
     }
 
